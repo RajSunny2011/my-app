@@ -29,6 +29,7 @@ pipeline {
 
         stage('Push to Docker Hub') {
             steps {
+                sh 'docker push $IMAGE_NAME:$BUILD_NUMBER'
                 sh 'docker push $IMAGE_NAME:latest'
             }
         }
